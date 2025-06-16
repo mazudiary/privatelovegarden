@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Private Love Garden</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="responsive.css"/>
+</head>
+<body>
+
+     <div id="password-modal" class="password-modal">
+        <div class="password-box">
+            <div class="password-box">
+                <div id = "welcome-quote-container" class="welcome-quote-container">
+                    <p class="welcome-quote" id="typed-quote"></p>
+                </div>
+
+                <div class="password-content" id="passwordContent" style="display: none;">
+                    <h2>Enter the Garden</h2>
+                    <p class="hint">Hint: What I call you?</p>
+                    <p class="fading-quote">"Soft things are only meant for soft hands..."</p>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" placeholder="Enter password">
+                        <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
+                    </div>
+                    <button onclick="checkPassword()">Enter</button>
+                </div>
+                </div>
+
+            <p id="password-error" class="error-message"></p>
+            <div id="lock-animation" class="lock hidden">🔒</div>
+        </div>
+    </div>
+
+
+    <!-- Moon and stars animation -->
+    <div class="sky">
+        <div class="moon"></div>
+        <div class="stars"></div>
+    </div>
+
+     <div class="container" id="main-content" style="display:none;">
+    <h1 id="typewriter"></h1>
+
+    <!-- Toggle Layout Button -->
+    <button id="toggle-layout-btn" aria-label="Toggle layout">Switch to List View</button>
+
+    <!-- Carousel Wrapper for mobile swipe -->
+    <div class="card-carousel-wrapper">
+      <div class="card-grid" id="card-container">
+          <!-- all your cards here (same as before) -->
+            <div class="card" onclick="showModal('Date in Private', 'Cherish the moments that belong only to you two. No eyes, just hearts.')">
+                <span>🌙</span>
+                <h2>Date in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Love in Private', 'A love story not told, but deeply felt. Quiet. Real. Ours.')">
+                <span>💖</span>
+                <h2>Love in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Be Happy in Private', 'Your joy is sacred. Protect it, nurture it, glow silently.')">
+                <span>🌸</span>
+                <h2>Be Happy in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Grow in Private', 'Like moonflowers at night, the most beautiful growth is unseen.')">
+                <span>🌱</span>
+                <h2>Grow in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Dream in Private', 'Let your hearts build empires no one else can see.')">
+                <span>💭</span>
+                <h2>Dream in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Heal in Private', 'Peace blossoms in silence. Love heals most in the quiet.')">
+                <span>🕊️</span>
+                <h2>Heal in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Trust in Private', 'In the garden of love, trust is the soil that nurtures all.')">
+                <span>🔒</span>
+                <h2>Trust in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Protect in Private', 'Shield what matters. Love guarded gently grows wildly.')">
+                <span>🛡️</span>
+                <h2>Protect in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Cherish in Private', 'Every moment is a treasure. Hold it close, keep it sacred.')">
+                <span>💎</span>
+                <h2>Cherish in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Celebrate in Private', 'Your love is a festival of two. Dance, laugh, sing in your own rhythm.')">
+                <span>🎉</span>
+                <h2>Celebrate in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Remember in Private', 'Memories are the petals of your love. Keep them close, let them bloom.')">
+                <span>📖</span>
+                <h2>Remember in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Grow Old in Private', 'A love that ages like fine wine, cherished in the quiet of your hearts.')">
+                <span>🍷</span>
+                <h2>Grow Old in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Live in Private', 'Life is a garden, and your love is the most beautiful flower.')">
+                <span>🌼</span>
+                <h2>Live in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Whisper in Private', 'The softest words carry the deepest truths when only you can hear them.')">
+                <span>🤫</span>
+                <h2> Whisper in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Feel in Private', 'In silence, your hearts will speak louder than any words.')">
+                <span>💌</span>
+                <h2>Feel in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Dream Together in Private', 'Build quiet universes only you two can name.')">
+                <span>🌌</span>
+                <h2>Dream Together in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Forgive in Private', 'The world doesn’t need to know when you healed. Only you do.')">
+                <span>🕯️</span>
+                <h2>Forgive in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Create in Private', 'Love is art. Sometimes, the masterpiece is made where no one’s watching.')">
+                <span>🎨</span>
+                <h2>Create in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Laugh in Private', 'Some laughter is so pure, it belongs only to the ones who understand the inside joke.')">
+                <span>😂</span>
+                <h2>Laugh in Private</h2>
+            </div>
+            <div class="card" onclick="showModal('Exist in Private', 'Being seen by the world is nothing. Being felt by one person—everything.')">
+                <span>🌾</span>
+                <h2>Exist in Private</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="main-content" style="display:none;">
+        <h1 id="typewriter"></h1>
+        <div class="card-grid">
+            
+
+        </div>
+    </div>
+                
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
